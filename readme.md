@@ -13,7 +13,7 @@ Accurate data: collecting a diverse and representative dataset would be crucial 
 Accuracy of training model: the agent could achieve high accuracy in the application’s output. It relates to selecting and training appropriate model (self-driving vehicle use reinforcement learning, machine learning used for image classification). we need to optimize parameter and ensuring they can perform in the real-world.
 In addition to, it has some factors that we need to concern are security (potential vulnerabilities in the application like system error, attack human), ethical consideration, scalability and adaptability.
 3.	How will you form an approach for a problem?
-Understand the problem: clear understanding of the problem you are trying to solve. determine and analyze the problem statement, identify the key objectives, then establish the success criteria. Gather relevant data to solve the problem, requirement and constraint related to the problem. If data’s problem happens, I will evaluate the quality and available of data, perform necessary data preprocessing step such as cleaning, normalization and feature engineering. Split data into training, validation and testing sets. Choose the appropriate model that suitable for the problem such as type of problem (classification, regression). 
+Understand the problem: clear understanding of the problem we are trying to solve. determine and analyze the problem statement, identify the key objectives, then establish the success criteria. Gather relevant data to solve the problem, requirement and constraint related to the problem. If data’s problem happens, I will evaluate the quality and available of data, perform necessary data preprocessing step such as cleaning, normalization and feature engineering. Split data into training, validation and testing sets. Choose the appropriate model that suitable for the problem such as type of problem (classification, regression). 
 4.	How will you track your assignments/tasks?
 To track the assignments/ tasks, I use some following approaches:
 List To-Do: I create tablework to list all assignments and task the everyday. I often use the google To-Do list tool to make sure the prioritize tasks, set due dates and update the status of my progress.
@@ -29,22 +29,39 @@ Virtual environment is a software emulation of a physical computer system. It al
 The benefits of using virtual environments include:
 •	Dependency management: Virtual environments enable you to install project-specific dependencies without interfering with other projects or the system environment.
 •	Isolation: Each virtual environment is isolated from others, which means that changes made to one environment do not affect others.
-•	Portability: Virtual environments can be easily shared with others or deployed to production environments. You can package the virtual environment along with your code, ensuring that the project's dependencies are self-contained and reproducible.
-•	Easy setup and cleanup: Creating a virtual environment is a straightforward process, usually done with a few simple commands. Similarly, when you're done with a virtual environment, you can easily delete it without leaving any traces on your system.
+•	Portability: Virtual environments can be easily shared with others or deployed to production environments. we can package the virtual environment along with your code, ensuring that the project's dependencies are self-contained and reproducible.
+•	Easy setup and cleanup: Creating a virtual environment is a straightforward process, usually done with a few simple commands. Similarly, when we're done with a virtual environment, we can easily delete it without leaving any traces on your system.
 
 7.	How to catch and handle exceptions in Python? What do you think is the best way to handle exceptions? 
-In Python, exceptions are used to handle errors and exceptional situations that may occur during program execution. To catch and handle exceptions, you can use a combination of the try, except, else, and finally blocks.
+In Python, exceptions are used to handle errors and exceptional situations that may occur during program execution. To catch and handle exceptions, we can use a combination of the try, except, else, and finally blocks.
 Here's how exception handling works in Python: 
-•	The try block: You enclose the code that might raise an exception within a try block. If an exception occurs within the try block, the remaining code within the block is skipped. 
-•	The except block: Immediately following the try block, you can add one or more except blocks to catch specific types of exceptions. Each except block specifies the exception type it can handle and the code to execute if that exception occurs. 
-•	The else block (optional): After the except block(s), you can include an else block that is executed only if no exceptions occurred in the try block. It is useful for code that should run only when no exceptions are raised. 
-•	The finally block (optional): After the except or else block(s), you can include a finally block that is always executed regardless of whether an exception occurred. It is commonly used for cleanup tasks, such as closing files or releasing resources.
+•	The try block: we enclose the code that might raise an exception within a try block. If an exception occurs within the try block, the remaining code within the block is skipped. 
+•	The except block: Immediately following the try block, we can add one or more except blocks to catch specific types of exceptions. Each except block specifies the exception type it can handle and the code to execute if that exception occurs. 
+•	The else block (optional): After the except block(s), we can include an else block that is executed only if no exceptions occurred in the try block. It is useful for code that should run only when no exceptions are raised. 
+•	The finally block (optional): After the except or else block(s), we can include a finally block that is always executed regardless of whether an exception occurred. It is commonly used for cleanup tasks, such as closing files or releasing resources.
 Example: 
- 
+ def divide_numbers(x, y):
+    try:
+        result = x / y
+    except ZeroDivisionError:
+        print("Error: Division by zero")
+    except (ValueError, TypeError):
+        print("Error: Invalid input")
+    else:
+        print("Result:", result)
+    finally:
+        print("Cleanup")
+
+# Main program
+x = 10
+y = 0
+
+divide_numbers(x, y)
+
 if a ZeroDivisionError occurs, the first except block is executed. If a ValueError or TypeError occurs, the second except block is executed. If no exceptions occur, the else block is executed. Finally, the finally block is always executed, regardless of whether an exception occurred.
-The best way to handle exceptions depends on the specific situation and the requirements of your program. It is generally recommended to: 
+The best way to handle exceptions depends on the specific situation and the requirements of our program. It is generally recommended to: 
 •	Catch specific exceptions: Handle specific exception types to provide targeted error messages or take appropriate actions based on the type of error. 
-•	Provide informative error messages: Include meaningful error messages in your exception handling code to aid in debugging and troubleshooting. 
+•	Provide informative error messages: Include meaningful error messages in our exception handling code to aid in debugging and troubleshooting. 
 •	Avoid catching broad exceptions: While it's possible to catch the base Exception class to handle all exceptions, it's generally better to catch specific exceptions to avoid masking unexpected errors. 
 •	Use the finally block for cleanup: If I have cleanup tasks, such as closing files or releasing resources, place them in the finally block to ensure they are always executed, regardless of exceptions. 
 •	Log or report exceptions: Consider logging or reporting exceptions to capture information about errors for debugging and monitoring purposes.
